@@ -1,5 +1,10 @@
+// import { combineReducers } from 'redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-export const store = configureStore({
+// import tagsReducer from './features/tagSlice'
 
+export default configureStore({
+  reducer: {
+    
+  }
 });
