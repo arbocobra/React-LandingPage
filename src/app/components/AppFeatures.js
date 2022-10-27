@@ -6,10 +6,11 @@ import { Archive } from '../features/Archive';
 import { Quote } from '../features/Quote';
 import { Weather } from '../features/Weather';
 
-export const AppFeatures = () => {
+export const AppFeatures = (props) => {
+  const {tags, selectTagHandler} = props;
     return (
         <div className="app-container">
-          <Reselect />
+          <Reselect tags={tags} selectTagHandler={selectTagHandler} />
           <Weather />
           <Todo />
           <Archive />

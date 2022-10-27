@@ -39,8 +39,6 @@ export const tagSlice = createSlice(
 
 export const { loadTags, pickTag } = tagSlice.actions;
 export const selectTags = (state) => {
-  // console.log(TAG())
-  // console.log(state.tags);
   return state.tags
 };
 
