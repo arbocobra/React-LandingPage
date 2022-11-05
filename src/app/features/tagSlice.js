@@ -7,13 +7,13 @@ const createTags = () => {
         const tagNum = Math.floor(Math.random() * tagData.length);
         const tag = tagData[tagNum]
         const name = tag.name
-        let exists = tagArray.find(element => element.name == name);
+        let exists = tagArray.find(element => element.name === name);
 
         if (!exists) {
           tag.selected = false;
           tagArray.push(tag);
         }  
-    } while (tagArray.length < 3);
+    } while (tagArray.length < 4);
     return tagArray
 }
 
@@ -24,7 +24,7 @@ export const tagSlice = createSlice(
     name: 'tags',
     initialState: [],
     reducers: {
-      loadTags: (state, action) => {
+      loadTags: (state) => {
         if (!state.length) {
           imageTags.map(tag => state.push(tag))
         }
@@ -33,54 +33,16 @@ export const tagSlice = createSlice(
         const selectedTag = action.payload.name;   
         const index = state.map(object => object.name).indexOf(selectedTag)
         state[index].selected = true;
+      },
+      reload: (state) => {
+        return state.filter(tag => tag.selected === false);
       }
     }
   })
 
-export const { loadTags, pickTag } = tagSlice.actions;
+export const { loadTags, pickTag, reload } = tagSlice.actions;
 export const selectTags = (state) => {
   return state.tags
 };
 
 export default tagSlice.reducer;
-
-// 
-
-
-
-// export const allMoviesSlice = createSlice(
-//     {
-//         name: 'allMovies',
-//         initialState: [],
-//         reducers: {
-//             loadData: (state, action) => {
-//                 if (!state.length) {
-//                     movieData.map(movie => state.push(movie))
-//                 }
-//             }
-//         }
-//     }
-// )
-
-// export const {
-//     loadData,
-//     addFavorite
-//  } = allMoviesSlice.actions;
-
-// const selectAllMovies = (state) => state.allMovies
-
-// export const selectFilteredAllMovies = (state) => {
-//     const favoriteMovies = state.favoriteMovies;
-
-//     if (favoriteMovies.length == 0) {
-//         return selectAllMovies(state);
-//     } else {
-//         let allMovies = selectAllMovies(state);
-//         for (const fav of favoriteMovies) {
-//             allMovies = allMovies.filter(movie => movie.id !== fav.id);
-//         }
-//         return allMovies;
-//     }
-// }
-
-// export default allMoviesSlice.reducer;

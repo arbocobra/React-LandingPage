@@ -1,14 +1,8 @@
 import React from 'react';
-// import { useState, useEffect } from 'react';
-// import { useSelector, useDispatch } from 'react-redux';
-
-// import { loadTags, pickTag, selectTags } from './tagSlice';
-// import { TagForm } from '../components/TagForm';
 
 export const Tag = (props) => {
     const {tags, selectTagHandler} = props;
-    console.log(tags)
-    console.log(selectTagHandler)
+
     return (
         <div className="tag-container inner-app">
             <h3>Tag</h3>

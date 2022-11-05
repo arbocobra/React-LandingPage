@@ -4,7 +4,7 @@ import './App.css';
 import { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { loadTags, pickTag, selectTags } from './app/features/tagSlice';
+import { loadTags, pickTag, reload, selectTags } from './app/features/tagSlice';
 import { TagSelect } from './app/components/TagSelect';
 import { AppFeatures } from './app/components/AppFeatures';
 import { Tag } from './app/features/Tag';
@@ -30,7 +30,6 @@ export const App = () => {
     const [tag, setTag] = useState({});
 
     const selectTagHandler = (tag) => {
-      console.log('selectTagHandler')
       setTag(tag);
       dispatch(pickTag(tag));
       const selector = document.getElementById('tag-overlay');
