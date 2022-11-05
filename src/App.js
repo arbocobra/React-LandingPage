@@ -7,6 +7,12 @@ import { useSelector, useDispatch } from 'react-redux';
 import { loadTags, pickTag, selectTags } from './app/features/tagSlice';
 import { TagSelect } from './app/components/TagSelect';
 import { AppFeatures } from './app/components/AppFeatures';
+import { Tag } from './app/features/Tag';
+import { Reselect } from './app/features/Reselect'
+import { Todo } from './app/features/Todo';
+import { Archive } from './app/features/Archive';
+import { Quote } from './app/features/Quote';
+import { Weather } from './app/features/Weather';
 
 export const App = () => {
 
@@ -48,8 +54,16 @@ export const App = () => {
     return (
         <div className="content">
             <div id="background" class="backgroundImg"></div>
-            <TagSelect tags={tags} selectTagHandler={selectTagHandler} />
-            <AppFeatures tags={tags} selectTagHandler={selectTagHandler} />
+            <TagSelect>
+                <Tag tags={tags} selectTagHandler={selectTagHandler} />
+            </TagSelect>
+            <AppFeatures>
+                <Reselect />
+                <Weather />
+                <Todo />
+                <Archive />
+                <Quote />
+            </AppFeatures>
         </div>
     );
 };

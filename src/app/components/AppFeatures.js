@@ -1,20 +1,16 @@
 import React from 'react';
 
-import { Reselect } from '../features/Reselect'
-import { Todo } from '../features/Todo';
-import { Archive } from '../features/Archive';
-import { Quote } from '../features/Quote';
-import { Weather } from '../features/Weather';
+// import { Reselect } from '../features/Reselect'
+// import { Todo } from '../features/Todo';
+// import { Archive } from '../features/Archive';
+// import { Quote } from '../features/Quote';
+// import { Weather } from '../features/Weather';
 
 export const AppFeatures = (props) => {
-  const {tags, selectTagHandler} = props;
+  // const {tags, selectTagHandler} = props;
     return (
         <div className="app-container">
-          <Reselect tags={tags} selectTagHandler={selectTagHandler} />
-          <Weather />
-          <Todo />
-          <Archive />
-          <Quote />
+          {props.children}
       </div>
     )
 }
