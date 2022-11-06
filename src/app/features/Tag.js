@@ -8,10 +8,7 @@ export const Tag = (props) => {
             <h3>Tag</h3>
             <div className="input-container">
                 {tags.map((tag) => (
-                    <div
-                        className="input-item"
-                        onClick={() => selectTagHandler(tag)}
-                    >
+                    <div className="input-item" onClick={() => selectTagHandler(tag)}>
                         {tag.name}
                     </div>
                 ))}

@@ -30,17 +30,32 @@ export const tagSlice = createSlice(
         }
       },
       pickTag: (state, action) => {
-        const selectedTag = action.payload.name;   
-        const index = state.map(object => object.name).indexOf(selectedTag)
+        const selectedTag = action.payload.id;
+        const index = state.map(object => object.id).indexOf(selectedTag);
+
         state[index].selected = true;
       },
-      reload: (state) => {
-        return state.filter(tag => tag.selected === false);
+      reselect: (state, action) => {
+        const selectedTag = action.payload.id;
+        const index = state.map(object => object.id).indexOf(selectedTag);
+        state.forEach((tag, i) => {
+          tag.selected = (i === index) ? true : false;
+        });
+
       }
+      // reload: (state) => {
+      //   state.map(tag => {
+      //     if ()
+      //   })
+      //   const reloadTags = state.filter(tag => tag.selected === false);
+      //   console.log(reloadTags);
+      //   return reloadTags;
+      // }
     }
   })
 
-export const { loadTags, pickTag, reload } = tagSlice.actions;
+// export const { loadTags, pickTag, reload } = tagSlice.actions;
+export const { loadTags, pickTag, reselect } = tagSlice.actions;
 export const selectTags = (state) => {
   return state.tags
 };
