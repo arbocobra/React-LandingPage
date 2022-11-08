@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 import tagData from '../tagData.js';
 
+// correct initial state to include selected: false in create tage, plus name and tagid (as null) and update in reducer using spread operator
+
 const createTags = () => {
     const tagArray = [];
     do {

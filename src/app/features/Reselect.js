@@ -6,6 +6,9 @@ import { getArt } from '../components/helperFunctions';
 
 export const Reselect = () => {
 
+    // add name of art and artist to box
+    // if i can, show image thumbnail on hover
+
     const tags = useSelector(selectTags);
     const dispatch = useDispatch();
 
@@ -19,10 +22,10 @@ export const Reselect = () => {
 
     return (
         <div className='reselect-container inner-app'>
-            <h3>Reselect</h3>
+            <h3>Change background</h3>
             <div className="input-container">
                 {reselectTags.map((tag) => (
-                    <div className="input-item" onClick={() => reselectTagHandler(tag)}>
+                    <div className="input-item" key={tag.id} onClick={() => reselectTagHandler(tag)}>
                         {tag.name}
                     </div>
                 ))}
