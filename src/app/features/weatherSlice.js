@@ -24,7 +24,7 @@ const getWeather = async (coord) => {
     try {
         const weatherResponse = await fetch(weatherUrl, weatherOptions)
         const weatherData = await weatherResponse.json();
-        return await weatherData;
+        return await weatherData.data[0];
     } catch (e) {
         console.error(e)
     }
@@ -49,17 +49,18 @@ export const loadWeather = createAsyncThunk(
             const coordUrl = `lon=${long}&lat=${lat}`
             try {
                 // Save API data with tempWeather
-                // forecast = await getWeather(coordUrl);
-                weather = tempWeather.data[0];
+                weather = await getWeather(coordUrl);
+                // console.log(weather)
+                // weather = tempWeather.data[0];
 
                 data.forecast = {
                     city: weather.city_name,
-                    temp: weather.app_temp,
+                    temp: weather.app_temp.toFixed(0),
                     desc: weather.weather.description,
                     icon: weather.weather.icon
                 };
-                console.log(weather)
-                console.log(data)
+                // console.log(weather)
+                // console.log(data)
             } catch {
                 console.log('Could not fetch weather')
             }
