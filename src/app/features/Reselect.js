@@ -22,13 +22,15 @@ export const Reselect = () => {
 
     return (
         <div className='reselect-container inner-app'>
-            <h3>Change image</h3>
-            <div className="input-container">
-                {reselectTags.map((tag) => (
-                    <div className="input-item" key={tag.id} onClick={() => reselectTagHandler(tag)}>
-                        {tag.name}
-                    </div>
-                ))}
+            <div className="feature-inner">
+                <h3>Change image</h3>
+                <div className="input-container">
+                    {reselectTags.map((tag) => (
+                        <div className="input-item" key={tag.id} onClick={() => reselectTagHandler(tag)}>
+                            {tag.name}
+                        </div>
+                    ))}
+                </div>
             </div>
         </div>
     )

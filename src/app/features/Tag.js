@@ -5,8 +5,8 @@ export const Tag = (props) => {
 
     return (
         <div className="tag-container inner-app">
-            <h3>Tag</h3>
-            <div className="input-container">
+            <div className="feature-inner"> 
+                {/* <h3>Tag</h3> */}
                 {tags.map((tag) => (
                     <div className="input-item" key={tag.id} onClick={() => selectTagHandler(tag)}>
                         {tag.name}

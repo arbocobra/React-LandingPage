@@ -15,13 +15,15 @@ export const Weather = () => {
 
     return (
         <div className='weather-container inner-app'>
-            <div className="inner-weather">
-                <p>{weather.city}</p>
-                <h2>{weather.temp}</h2>
-            </div>
-            <div className="inner-weather">
-                <p>{weather.desc}</p>
-                <div className="image-container"><img src={weatherIcon} /></div>
+            <div className="feature-inner">
+                <div className="inner-weather">
+                    <p>{weather.city}</p>
+                    <p>{weather.desc}</p>
+                </div>
+                <div className="inner-weather">
+                    <h2>{weather.temp}&deg;C</h2>
+                    <div className="image-container"><img src={weatherIcon} width='50' height='50' /></div> 
+                </div>
             </div>
         </div>
     )

@@ -12,8 +12,9 @@ export const Todo = () => {
     const [todo, setTodo] = useState('');
     return (
         <div className='todo-container inner-app'>
-            <h3>To Do</h3>
-            
+            <div className="feature-inner">
+                <h3>To Do</h3>
+            </div>
         </div>
     )
 }

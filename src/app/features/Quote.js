@@ -13,8 +13,10 @@ export const Quote = () => {
 
     return (
         <div className='quote-container inner-app'>
-            <h4>{quote.text}</h4>
-            <p>{quote.author}</p>
+            <div className="feature-inner">
+                <h4>{quote.text}</h4>
+                <p>{quote.author}</p>
+            </div>
         </div>
     )
 }
