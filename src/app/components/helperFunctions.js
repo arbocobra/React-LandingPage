@@ -1,5 +1,4 @@
 export const getArt = async (id) => {
-    console.log('get art')
     const metUrl = 'https://collectionapi.metmuseum.org/public/collection/v1/objects';
     // const idNum = id;
     const endpoint = `${metUrl}/${id}`;
@@ -38,53 +37,54 @@ const renderResponse = (val) => {
     background.style.backgroundImage = `url(${val.primaryImage})`;
 };
 
-// const fetchQuote = async () => {
-//     let obj;
-//     const res = await fetch('https://api.quotable.io/random');
-//     obj = await res.json();
-//     return obj;
-// }
-
-// export const getQuote = async () => {
-//     await fetchQuote().then()
-// }
-
-// export const renderQuote = (res) => {
-//     let displayQuote = [];
-//     for (let item in res) {
-//         if (item === 'content' || item === 'author') {
-//             console.log(res[item])
-//             displayQuote.push(res[item])
-//             console.log(displayQuote)
-//         }
-//     }
-//     return displayQuote;
-// }
-
-// 
-// const renderResponse = (res) => {
-//     // Handles if res is falsey
-//     if(!res){
-//       console.log(res.status);
-//     }
-//     // In case res comes back as a blank array
-//     if(!res.length){
-//       responseField.innerHTML = "<p>Try again!</p><p>There were no suggestions found!</p>";
-//       return;
-//     }
-  
-//     // Creates an empty array to contain the HTML strings
-//     let wordList = [];
-//     // Loops through the response and caps off at 10
-//     for(let i = 0; i < Math.min(res.length, 10); i++){
-//       // creating a list of words
-//       wordList.push(`<li>${res[i].word}</li>`);
-//     }
-//     // Joins the array of HTML strings into one string
-//     wordList = wordList.join("");
-  
-//     // Manipulates responseField to render the modified response
-//     responseField.innerHTML = `<p>You might be interested in:</p><ol>${wordList}</ol>`;
-//     return
-//   }
-//   
+export const tempWeather = {
+    "count": 1,
+    "data": [
+      {
+        "app_temp": 10,
+        "aqi": 16,
+        "city_name": "London",
+        "clouds": 0,
+        "country_code": "CA",
+        "datetime": "2022-11-08:18",
+        "dewpt": -0.1,
+        "dhi": 93.81,
+        "dni": 790.78,
+        "elev_angle": 28.96,
+        "ghi": 470.22,
+        "gust": 3.8984375,
+        "h_angle": 18,
+        "lat": 42.98,
+        "lon": -81.25,
+        "ob_time": "2022-11-08 18:34",
+        "pod": "d",
+        "precip": 0,
+        "pres": 1007,
+        "rh": 51,
+        "slp": 1037.0588,
+        "snow": 0,
+        "solar_rad": 470.2,
+        "sources": [
+          "rtma"
+        ],
+        "state_code": "08",
+        "station": "AS442",
+        "sunrise": "12:09",
+        "sunset": "22:08",
+        "temp": 10,
+        "timezone": "America/Toronto",
+        "ts": 1667932470,
+        "uv": 3.1377,
+        "vis": 16,
+        "weather": {
+          "icon": "c01d",
+          "description": "Clear sky",
+          "code": 800
+        },
+        "wind_cdir": "E",
+        "wind_cdir_full": "east",
+        "wind_dir": 81,
+        "wind_spd": 3.105674
+      }
+    ]
+  }

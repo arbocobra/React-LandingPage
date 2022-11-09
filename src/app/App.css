@@ -69,6 +69,8 @@
 }
 .weather-container {
     grid-area: 1 / 2 / 2 / 7;
+    flex-direction: row;
+    justify-content: end;
     /* background-color: #FDE2E4; */
 }
 .todo-container {
@@ -98,6 +100,16 @@
 }
 .input-item:hover {
     background-color: rgba(0, 0, 0, 0.15);
+}
+.inner-weather {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.inner-weather .image-container {
+    /* object-fit: cover; */
+    width: 100%;
+    max-height: 100%;
 }
 
 /* Text */
@@ -130,6 +142,10 @@ h4 {
     font-family: 'Lora', serif;
     font-size: 22px;
     margin: 15px 0;
+}
+
+.quote-container h4 {
+    margin-bottom: 5px;
 }
 
 /* for later  */

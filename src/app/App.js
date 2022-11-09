@@ -16,6 +16,8 @@ import { Archive } from './features/Archive';
 import { Quote } from './features/Quote';
 import { Weather } from './features/Weather';
 
+// Get info for background - display name/artist - react state? 
+
 export const App = () => {
     
     const tags = useSelector(selectTags);

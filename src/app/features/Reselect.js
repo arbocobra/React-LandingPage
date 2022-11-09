@@ -22,7 +22,7 @@ export const Reselect = () => {
 
     return (
         <div className='reselect-container inner-app'>
-            <h3>Change background</h3>
+            <h3>Change image</h3>
             <div className="input-container">
                 {reselectTags.map((tag) => (
                     <div className="input-item" key={tag.id} onClick={() => reselectTagHandler(tag)}>
