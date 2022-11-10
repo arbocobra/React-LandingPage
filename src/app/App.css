@@ -126,6 +126,32 @@
     display: flex;
     margin: 0 auto;
 }
+.todo-entry {
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 2px solid #fff;    
+}
+.todo-entry input {
+    background: none;
+    width: 95%;
+    height: 40px;
+    border: none;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+}
+input:focus, input:focus-visible {
+    outline: none;
+}
+.todo-submit {
+    width: 5%;
+    color: #fff;
+    font-size: 24px;
+    display: flex;
+    padding: 5px;
+    align-items: end;
+}
 
 /* Text */
 

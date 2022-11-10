@@ -8,20 +8,24 @@ export const todoSlice = createSlice(
     initialState: [],
     reducers: {
         addTodo: (state, action) => {
-            state.push(action.payload);
+            state.push({
+              text: action.payload,
+              id: state.length + 1,
+              isComplete: false,
+            });
         },
-        deleteTodo: (state, action) => {
-            state.filter(todo => todo.id !== action.payload.id)
-        },
-        toggleComplete: (state, action) => {
-            const todo = state.find(todo => todo.id === action.payload.id)
-            todo.complete = !todo.complete;
-        }
+        // deleteTodo: (state, action) => {
+        //     state.filter(todo => todo.id !== action.payload.id)
+        // },
+        // toggleComplete: (state, action) => {
+        //     const todo = state.find(todo => todo.id === action.payload.id)
+        //     todo.complete = !todo.complete;
+        // }
     }
   })
 
-
-export const { addTodo, deleteTodo, toggleComplete } = todoSlice.actions;
+  export const { addTodo } = todoSlice.actions;
+// export const { addTodo, deleteTodo, toggleComplete } = todoSlice.actions;
 export const selectTodos = (state) => {
   return state.todos
 };
