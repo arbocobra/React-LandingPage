@@ -1,33 +1,31 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { selectTags } from '../features/tagSlice';
+import { addTodo, deleteTodo, toggleComplete, selectTodos } from '../features/todoSlice';
 
-// import { Reselect } from '../features/Reselect'
-// import { Todo } from '../features/Todo';
-// import { Archive } from '../features/Archive';
-// import { Quote } from '../features/Quote';
-// import { Weather } from '../features/Weather';
+import { Reselect } from '../features/Reselect';
+import { Todo } from '../features/Todo';
+import { Archive } from '../features/Archive';
+import { Quote } from '../features/Quote';
+import { Weather } from '../features/Weather';
+import { ToDoInput } from './TodoInput';
 
 export const AppFeatures = (props) => {
+    const dispatch = useDispatch();
+    const [todo, setTodo] = useState('');
+    const [todoState, setTodoState] = useState('');
 
-    // const tags = useSelector(selectTags);
-    // const dispatch = useDispatch();
+    
 
-    // const featureRender = () => {
-    //     console.log('render appfeatures');
-    //     dispatch(reload())
-    // };
 
-    // useEffect(featureRender, []);
-
-    // const dispatch = useDispatch();
-
-    // const featureRender = () => {
-    //     console.log('render appfeatures');
-
-    // };
-
-    // useEffect(featureRender, []);
-
-    return <div className="app-container">{props.children}</div>;
+    return (
+        <div className="app-container">
+            <Reselect />
+            <Weather />
+            <Todo>
+                <ToDoInput todo={todo} setTodo={setTodo} todoState={todoState} setTodoState={setTodoState} />
+            </Todo>
+            <Archive todo={todo} todoState={todoState} />
+            <Quote />
+        </div>
+    );
 };

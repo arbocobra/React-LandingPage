@@ -49,9 +49,9 @@ export const loadWeather = createAsyncThunk(
             const coordUrl = `lon=${long}&lat=${lat}`
             try {
                 // Save API data with tempWeather
-                weather = await getWeather(coordUrl);
+                // weather = await getWeather(coordUrl);
                 // console.log(weather)
-                // weather = tempWeather.data[0];
+                weather = tempWeather.data[0];
 
                 data.forecast = {
                     city: weather.city_name,

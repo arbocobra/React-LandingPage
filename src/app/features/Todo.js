@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { addTodo, selectTodos } from './todoSlice'
 import { ToDoInput } from '../components/TodoInput';
 
-export const Todo = () => {
+export const Todo = (props) => {
     // in todo: setstate onchange (react), submit = addtodo (= redux store)
     // other: submit with keydown and onclick of small check + clear onclisk of small x
 
@@ -11,7 +11,7 @@ export const Todo = () => {
     return (
         <div className='todo-container inner-app'>
             <div className="feature-inner">
-                <ToDoInput />                
+                {props.children}          
             </div>
         </div>
     )

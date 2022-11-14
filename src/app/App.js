@@ -10,11 +10,11 @@ import { getArt } from './components/helperFunctions';
 import { TagSelect } from './components/TagSelect';
 import { AppFeatures } from './components/AppFeatures';
 import { Tag } from './features/Tag';
-import { Reselect } from './features/Reselect';
-import { Todo } from './features/Todo';
-import { Archive } from './features/Archive';
-import { Quote } from './features/Quote';
-import { Weather } from './features/Weather';
+// import { Reselect } from './features/Reselect';
+// import { Todo } from './features/Todo';
+// import { Archive } from './features/Archive';
+// import { Quote } from './features/Quote';
+// import { Weather } from './features/Weather';
 
 // Get info for background - display name/artist - react state? 
 
@@ -54,24 +54,9 @@ export const App = () => {
         return (
             <div className="content">
                 <div id="background" class="backgroundImg"></div>
-                <AppFeatures>
-                    <Reselect />
-                    <Weather />
-                    <Todo />
-                    <Archive />
-                    <Quote />
-                </AppFeatures>
+                <AppFeatures />
+                    
             </div>
         );
     }
-    // return (
-    //     <div className="content">
-    //         <div id="background" class="backgroundImg"></div>
-    //         <TagSelect>
-    //             <Tag tags={tags} selectTagHandler={selectTagHandler} />
-    //         </TagSelect>
-    //         {if ()}
-    //         <AppFeatures />
-    //     </div>
-    // );
 };

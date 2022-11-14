@@ -144,6 +144,21 @@
 input:focus, input:focus-visible {
     outline: none;
 }
+input::placeholder {
+    font-size: 15px;
+    width: fit-content;
+    padding-right: 25px;
+    color: white;
+    opacity: 0.7;
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    background-image: url(./components/check-solid.svg);
+}
+input:focus::-webkit-input-placeholder 
+{
+    color: transparent;
+    background: none;
+}
 .todo-submit {
     width: 5%;
     color: #fff;
@@ -151,6 +166,21 @@ input:focus, input:focus-visible {
     display: flex;
     padding: 5px;
     align-items: end;
+    cursor: pointer;
+}
+.todo-box {
+    display: flex;
+    flex-flow: column nowrap;
+}
+.todo-options {
+    display: flex;
+    flex-flow: row nowrap;
+}
+.checkbox {
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
+    /* background: #fff; */
 }
 
 /* Text */
